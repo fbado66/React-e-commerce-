@@ -1,0 +1,11 @@
+body{
+  font-family: 'Open Sans Condensed', sans-serif!important;
+  background: white;
+  /* color: black; */
+}
+
+.text-title{
+  font-family: 'Fjalla One', sans-serif;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
