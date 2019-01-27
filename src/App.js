@@ -7,8 +7,7 @@ import Descriptions from './components/Descriptions';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
 import ErrorPage from './components/ErrorPage';
-
-
+import Modal from './components/Modal';
 
 
 
@@ -23,6 +22,7 @@ class App extends Component {
          <Route path='/cart'component={Cart}></Route>
          <Route component={ErrorPage}></Route>
        </Switch>
+       <Modal />
        
 
      </React.Fragment>

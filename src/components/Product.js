@@ -10,18 +10,20 @@ export default class Product extends Component {
       <ProductContainer className="col-9 mx-auto col-md-6 col-lg-3 my-3">
         <div className="card">
           <ProductConsumer>
-            { value => {
+            {value => {
               return (
                 <div
-                  className = "img-container p-5"
-                  onClick = {() => value.handleDetail( id )}>
+                    className = "img-container p-5"
+                    onClick = {() => 
+                    value.handleDescription(id)
+                      }>
                   <Link to = "/descriptions">
-                    <img src = { img } alt="card-img" className="card-img-top" />
+                    <img src = {img} alt="card-img" className="card-img-top" />
                   </Link>
                   <button
                     className = "cart-btn"
                     disabled = {inCart ? true : false}
-                    onClick = { () => {
+                    onClick = {() => {
                       value.addToCart(id);
                       value.openModal(id);
                     }}>
@@ -36,10 +38,11 @@ export default class Product extends Component {
                 </div>
               );
             }}
+            
           </ProductConsumer>
           <div className = "card-footer d-flex justify-content-between">
             <p className = "align-self-center mb-0">{ title }</p>
-            <h5 className = "text-blue font-italic mb-0">
+            <h5 className = "font-italic mb-0">
               <span className = "mr-1">$</span>
               { price }
             </h5>

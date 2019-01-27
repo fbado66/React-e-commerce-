@@ -2,10 +2,12 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import { ButtonContainer } from './Button';
+
  
-export default class Navbar extends Component {
+export default class Navbar extends Component { 
+
   render() {
-    return (
+        return (
       <NavContainer className='navbar navbar-expand-sm bg-warning navbar-dark px-sm-5'>
       <Link to='/'>
       <i className="fas fa-code" alt='bakery' ></i>
@@ -22,8 +24,9 @@ export default class Navbar extends Component {
           <span className='mr-2'>
           <i className='fas fa-cart-arrow-down' />
           </span>
-          my cart
+          my cart 
 
+        
         </ButtonContainer>
         </Link>
 
