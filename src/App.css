@@ -1,22 +1,47 @@
 body{
-  font-family: 'Open Sans Condensed', sans-serif!important;
+  font-family: 'Marck Script', cursive!important;
   background: white;
-  /* color: black; */
 }
 
+#home {
+  text-decoration: none!important;
+  font-size: 20px;
+}
+
+.text-heading{
+  font-family: 'Bad Script', cursive;
+  color: palevioletred;
+  text-shadow: 4px 4px #a6a8ab; 
+  font-size: 4.5rem!important;
+}
+
+.number-of-title{
+  color:  palevioletred;
+  text-shadow: 4px 4px #a6a8ab; 
+  font-size: 4.5rem!important;
+
+}
+.text-ingredients{
+  font-family: 'Bad Script', cursive!important;
+
+}
 .text-title{
-  font-family: 'Fjalla One', sans-serif;
+  font-family: 'Josefin Slab', serif;
+
   letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
 
+.text-total{
+  font-family: 'Bad Script', cursive;
+}
 .btn-black{
-  background: transparent;
+  background: white;
   text-transform: capitalize;
   font-size: 0.8rem !important;
   color: black;
   border-radius: 0!important;
-  border: 0.1rem  solid black !important;
+  border: 1px  solid #a6a8ab !important;
 }
 
 .btn-black:hover{
@@ -27,5 +52,104 @@ body{
 .cart-icon{
   cursor: pointer; 
   font-size: 1.2rem;
-  color: purple;
+  color: darkblue;
+}
+
+.navbar{
+  height: 4rem;
+}
+
+#image{
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  right: 0;
+  bottom: 0rem;
+  height: 22rem;
+  width: 100%;
+  opacity: .9;
+  background-size: cover;
+}
+
+#products-container{
+  top: 15rem;
+}
+
+#cart-container{
+  margin-top: 25rem!important;
+}
+
+@media(max-width: 990px) {
+  .container-fluid{
+    margin-top: 25rem;
+  }
+  #extra-footer{
+    display: none;
+  }
+}
+
+@media(max-width: 768px) {
+  #products-container{
+    top: 9rem;
+  }  
+}
+
+/* Iphones and Android mobile version   */
+@media(max-width: 375px) {
+  #products-container{
+    top: 0rem;
+  }
+  .container-fluid {
+    margin-top: 26rem;
+  }
+  #footer-padding {
+    padding-top: 2rem!important;
+  }
+  #padding-empty-cart{
+    padding-bottom: 16rem!important;
+  }
+  .number-of-title {
+    font-size: 3.5rem!important;
+  }
+}
+
+#product-price{
+  text-align: right;
+  margin-right: 2rem!important;
+  color: #a6a8ab;
+}
+
+#product-title{
+  color: #1b143a;
+}
+
+#product-description{
+  margin-top: 24rem;
+}
+
+#footer{
+  position: relative;
+  left: 0;
+  bottom: 0rem;
+  width: 100%;
+  background-color: #1b143a;  
+}
+
+#footer-left{
+  margin-left: 0;
+}
+
+#footer-right{
+  position: absolute;
+  right: 0;
+  padding-right: 1rem;
+  z-index: 1;
+}
+
+#footer-padding{
+  padding-top: 14rem;
+}
+
+#padding-empty-cart{
+  padding-bottom: 4rem;
 }

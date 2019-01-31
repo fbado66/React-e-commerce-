@@ -14,7 +14,9 @@ class ProductProvider extends Component {
       modalProduct: descriptionProduct,
       cartSubTotal: 0,
       cartTax: 0,
-      cartTotal: 0
+      cartTotal: 0,
+      cartItems: 0,
+      
    };
    componentDidMount(){
      this.setProducts();
@@ -25,6 +27,7 @@ class ProductProvider extends Component {
      storeProducts.forEach(item => {
        const singleItem = { ...item};
        tempProducts = [...tempProducts,singleItem];
+       
      })
      this.setState( ()=> {
        return {products: tempProducts};
@@ -34,6 +37,7 @@ class ProductProvider extends Component {
 getItem = (id) => {
   const product = this.state.products.find(item => item.id === id);
   return product;
+  
 };
 
   handleDescription =(id) =>{
@@ -83,6 +87,9 @@ getItem = (id) => {
     product.count = product.count + 1;
     product.total = product.count * product.price;
 
+    // console.log(this.state.cart.length + product.count)
+    // console.log(product.count)
+
     this.setState(() =>{
       return {
         cart: [...tempCart]
@@ -97,7 +104,6 @@ getItem = (id) => {
 
     const index = tempCart.indexOf(selectedProduct);
     const product = tempCart[index];
-
     product.count = product.count - 1;
     if (product.count ===0) {
       this.removeItem(id)
@@ -114,12 +120,12 @@ getItem = (id) => {
       }
       );
     }
-
   };
+ 
   removeItem = (id) =>{
     let tempProducts = [...this.state.products];
     let tempCart = [...this.state.cart];
-
+    
     tempCart = tempCart.filter(item => item.id !== id);
 
     const index = tempProducts.indexOf(this.getItem(id));
@@ -148,17 +154,19 @@ getItem = (id) => {
   };
 addTotals = () => {
   let subTotal = 0;
-  this.state.cart.map(item => parseFloat( (subTotal += item.total).toFixed(2) ) );
-  const tempTax = parseFloat((subTotal * 0.15).toFixed(2));
-  const tax = parseFloat(tempTax.toFixed(2));
+  this.state.cart.map(item => subTotal += item.total);  
+    // console.log(this.state.cart.length)
+  const tempTax = parseFloat((subTotal * 0.2).toFixed(2));
+  const tax = tempTax;
   const total = parseFloat((subTotal + tax).toFixed(2));
   this.setState(() => {
+    
     return {
       cartSubTotal:subTotal,
       cartTax:tax,
-      cartTotal:total
+      cartTotal:total      
     };
-  });
+  }); 
 }
   render() {
     return (
@@ -172,7 +180,6 @@ addTotals = () => {
         decrement: this.decrement,
         removeItem: this.removeItem,
         clearCart: this.clearCart
-
       }}>
         {this.props.children}
       </ProductContext.Provider>
@@ -181,5 +188,4 @@ addTotals = () => {
 }
 
 const ProductConsumer = ProductContext.Consumer;
-
 export {ProductProvider, ProductConsumer};

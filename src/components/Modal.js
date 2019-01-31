@@ -32,7 +32,7 @@ export default class Modal extends Component {
                   </Link>
                   <Link to ='/cart'>
                     <ButtonContainer onClick = {() => closeModal()}>
-                      go to cart
+                      checkout
                     </ButtonContainer>
                   </Link>
                 </div>
@@ -49,7 +49,7 @@ export default class Modal extends Component {
 
 const ModalContainer = styled.div`
 position: fixed;
-top: 0;
+top: 0rem;
 left: 0;
 right: 0;
 bottom: 0;

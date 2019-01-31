@@ -7,23 +7,23 @@ export default class Product extends Component {
   render() {
     const { id, title, img, price, inCart } = this.props.product;
     return (
-      <ProductContainer className="col-9 mx-auto col-md-6 col-lg-3 my-3">
+      <ProductContainer id='products-container' className="col-9 mx-auto col-md-6 col-lg-3 my-3">
         <div className="card">
           <ProductConsumer>
             {value => {
               return (
                 <div
                     className = "img-container p-5"
-                    onClick = {() => 
+                      onClick = {() => 
                     value.handleDescription(id)
                       }>
                   <Link to = "/descriptions">
                     <img src = {img} alt="card-img" className="card-img-top" />
                   </Link>
                   <button
-                    className = "cart-btn"
-                    disabled = {inCart ? true : false}
-                    onClick = {() => {
+                      className = "cart-btn"
+                      disabled = {inCart ? true : false}
+                      onClick = {() => {
                       value.addToCart(id);
                       value.openModal(id);
                     }}>
@@ -38,15 +38,16 @@ export default class Product extends Component {
                 </div>
               );
             }}
-            
           </ProductConsumer>
           <div className = "card-footer d-flex justify-content-between">
-            <p className = "align-self-center mb-0">{ title }</p>
-            <h5 className = "font-italic mb-0">
-              <span className = "mr-1">$</span>
-              { price }
-            </h5>
+          <Link to = "/descriptions">
+            <p id = 'product-title' className = "align-self-center mb-0">{ title }</p>
+            </Link>
           </div>
+          <h6 id='product-price' className = " mb-0 mr-0">
+              <span className = "mr-0">Price: $</span>
+             { price }
+            </h6>
         </div>
       </ProductContainer>
     );
@@ -80,14 +81,14 @@ const ProductContainer = styled.div`
     transition: all 1s linear;
   }
   .img-container:hover .card-img-top {
-    transform: scale(1.2);
+    transform: scale(1.3);
   }
   .cart-btn {
     position: absolute;
     bottom: 0;
     right: 0;
     padding: 0.2rem 0.4rem;
-    background: green;
+    background: blue;
     border: none;
     color: white;
     font-size: 1.4rem;
@@ -99,7 +100,7 @@ const ProductContainer = styled.div`
     transform: translate(0, 0);
   }
   .cart-btn:hover {
-    color: blue;
+    color: darkblue;
     cursor: pointer;
   }
 `;

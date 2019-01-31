@@ -8,7 +8,8 @@ import ProductList from './components/ProductList';
 import Cart from './components/Cart';
 import ErrorPage from './components/ErrorPage';
 import Modal from './components/Modal';
-
+import Counter from './components/Cart/Counter';
+import Footer from './components/Footer';
 
 
 class App extends Component {
@@ -22,9 +23,9 @@ class App extends Component {
          <Route path='/cart'component={Cart}></Route>
          <Route component={ErrorPage}></Route>
        </Switch>
+       <Footer />
        <Modal />
-       
-
+      
      </React.Fragment>
     );
   }
