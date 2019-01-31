@@ -21,8 +21,6 @@ export default class ErrorPage extends Component {
             <p className = 'p-5 text-center align-text'>___</p>
             <h3> follow this link back to our site</h3>
               <h2> <Link to ='/'>Bakery</Link></h2>
-              
-
           </div>
 
         </div>

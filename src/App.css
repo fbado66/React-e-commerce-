@@ -9,18 +9,26 @@ body{
 }
 
 .text-heading{
-  font-family: 'Bad Script', cursive;
-  color: palevioletred;
-  text-shadow: 4px 4px #a6a8ab; 
+  font-family: 'Gotham';
+  color: #3E3636;
+  text-shadow: 1px 2px white;  
   font-size: 4.5rem!important;
+  position: relative;
+  bottom: 3rem;
 }
 
 .number-of-title{
-  color:  palevioletred;
-  text-shadow: 4px 4px #a6a8ab; 
+  color: #3E3636;
+  text-shadow: 2px 1px white;  
   font-size: 4.5rem!important;
-
+  position: relative;
+  bottom: 3rem;
 }
+
+#title-padding{
+  padding-top: 4rem;
+}
+
 .text-ingredients{
   font-family: 'Bad Script', cursive!important;
 
@@ -151,5 +159,20 @@ body{
 }
 
 #padding-empty-cart{
-  padding-bottom: 4rem;
+  padding-bottom: 6rem;
+}
+
+#empty-cart{
+font-family: "Josefin Slab", serif;
+font-size: 32px;
+line-height: 38.4px;
+text-align: center;
+letter-spacing: 4.8px;
+position: relative;
+top: 21rem;
+}
+
+#github{
+  font-size: 2rem;
+  padding-left: 6px;
 }

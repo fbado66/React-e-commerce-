@@ -12,7 +12,7 @@ export default class Navbar extends Component {
             <Link id='home' to='/'>
               <span className = 'text-center text-white'>1829 Bakery</span>
             </Link>
-      
+          
             <Link to='/cart' className='ml-auto'>
               <ButtonContainer>
                 <span className='mr-2'>
