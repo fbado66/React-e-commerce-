@@ -1,3 +1,6 @@
+Check out this app in production mode 
+https://1829-bakery.netlify.com/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
